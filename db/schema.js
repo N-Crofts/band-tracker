@@ -20,12 +20,12 @@ const UserSchema = new Schema({
     bands: [BandSchema]
 })
 
-const GigsModel = mongoose.model('Gig', GigSchema)
-const BandModel = mongoose.model('Gig', BandSchema)
-const UserModel = mongoose.model('Gig', UserSchema)
+const GigModel = mongoose.model('Gig', GigSchema)
+const BandModel = mongoose.model('Band', BandSchema)
+const UserModel = mongoose.model('User', UserSchema)
 
 module.exports = {
-    Gig: GigsModel,
+    Gig: GigModel,
     Band: BandModel,
     User: UserModel
 }
