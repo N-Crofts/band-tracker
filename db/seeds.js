@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/band-tracker')
+mongoose.connect('mongodb://localhost/band-tracker', { useNewUrlParser: true })
 
 const Schema = require('./schema')
 // const User = Schema.User
@@ -31,9 +31,11 @@ const daniel = new User({
     bands: [nickle]
 })
 
-daniel.save()
-    .then(data => {
-        console.log(data)
+User.deleteMany()
+    .then(() => {
+        return daniel.save()
+    })
+    .then(() => {
         console.log('Done Seeding!')
         mongoose.connection.close()
     })
