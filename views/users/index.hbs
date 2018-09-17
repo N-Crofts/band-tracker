@@ -1,7 +1,7 @@
-<h1>All Users</h1>
+<h1>All Users <a href='/users/new'>( new )</a></h1>
 
 <div>
     {{#each users}}
-        <div>Username: {{this.username}}, City: {{this.city}}</div>
+        <div>Username: {{this.username}} <a href='/users/{{this._id}}'>Go to user</a></div>
     {{/each}}
 </div>
