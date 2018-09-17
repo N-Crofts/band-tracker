@@ -12,7 +12,12 @@ router.get('/', (req, res) => {
 })
 
 // SHOW, SHOW ONE
-
+router.get('/:id', (req, res) => {
+  User.findById(req.params.id)
+  .then((user) => {
+    res.render('users/show', { user })
+  })
+})
 // NEW, RENDER NEW FORM
 
 // CREATE
