@@ -25,15 +25,21 @@ const nickle = new Band({
     gigs: [monday]
 })
 
-const daniel = new User({
+const mancy = new User({
     username: 'Mancy',
     city: 'Atlanta',
     bands: [nickle]
 })
 
+const nancy = new User({
+    username: 'Nancy',
+    city: 'Hotlanta',
+    bands: [nickle]
+})
+
 User.deleteMany()
     .then(() => {
-        return daniel.save()
+        return User.insertMany([mancy, nancy])
     })
     .then(() => {
         console.log('Done Seeding!')

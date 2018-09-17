@@ -3,8 +3,11 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const mongoose = require('mongoose')
+mongoose.connect('mongodb://localhost/band-tracker')
 
-var indexRouter = require('./routes/index');
+
+var indexRouter = require('./routes');
 var usersRouter = require('./routes/users');
 
 var app = express();
