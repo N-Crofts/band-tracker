@@ -1,5 +1,6 @@
+require('dotenv').config()
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/band-tracker', { useNewUrlParser: true })
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true })
 
 const Schema = require('./schema')
 // const User = Schema.User
